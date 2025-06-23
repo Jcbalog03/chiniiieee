@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Simple Message for my Chinie</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Use the Inter font */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Simple heart beat animation */
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        .heartbeat {
+            animation: heartbeat 1.5s ease-in-out infinite;
+        }
+        /* Fade-in animation for the message */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-br from-pink-100 to-rose-200 min-h-screen flex items-center justify-center p-4">
+
+    <div class="bg-white rounded-xl shadow-lg p-8 max-w-md w-full text-center">
+
+        <div id="initial-view">
+            <i class="fas fa-heart text-pink-500 text-6xl mb-4 heartbeat"></i>
+            <h1 class="text-2xl font-bold text-gray-800 mb-4">To the Prettiest & Cutest Chinie!</h1>
+            <p class="text-gray-600 mb-6">Someone special wanted to send you a little surprise...</p>
+            <button id="reveal-button" class="bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-6 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
+                Click for a Surprise! <i class="fas fa-gift ml-2"></i>
+            </button>
+        </div>
+
+        <div id="surprise-message" class="hidden">
+             <i class="fas fa-heart text-red-500 text-6xl mb-4 heartbeat"></i>
+            <h2 class="text-3xl font-bold text-rose-600 mb-4">Surprise!</h2>
+            <p class="text-lg text-gray-700 mb-3">
+             Sa bawat araw na lumilipas,
+Pangalan mo, Chin, nasa isip ko't wagas.
+Ang pag-ibig ko sa'yo, hindi kumukupas,
+Higit pa sa bituin, sa dagat na malawak.
+
+Sa iyong ngiti, ako'y nabighani,
+Sa 'yong tawa, puso ko'y sumisigla lagi.
+Ikaw ang ilaw sa dilim kong sandali,
+Aking binibini, ang tangi kong minimithi.
+            </p>
+            <p class="text-lg text-gray-700 mb-6">
+                Palagi kong pasasalamat ang dala,
+Sa tadhana na ikaw ay pinadala.
+Anghel ka sa lupa, sa aki'y gumagabay,
+Kasama kang habang-buhay, walang humpay.
+
+Salamat sa bawat yakap at halik,
+Sa bawat lambing na sa puso'y gumigising.
+Ikaw ang pangarap na natupad, tunay,
+Mahal na mahal kita, Chin, magpakailanman.
+            </p>
+            <p class="text-md text-gray-500">
+              
+<br>
+                <span class="font-semibold">By: Jc Balog</span>
+            </p>
+             <i class="fas fa-heart text-pink-400 text-2xl mt-6"></i>
+        </div>
+
+    </div>
+
+    <script>
+        // Get references to the button and the views
+        const revealButton = document.getElementById('reveal-button');
+        const initialView = document.getElementById('initial-view');
+        const surpriseMessage = document.getElementById('surprise-message');
+
+        // Add event listener to the button
+        revealButton.addEventListener('click', () => {
+            // Hide the initial view
+            initialView.classList.add('hidden');
+
+            // Show the surprise message
+            surpriseMessage.classList.remove('hidden');
+            // Add the fade-in animation class
+            surpriseMessage.classList.add('fade-in');
+        });
+    </script>
+
+</body>
+</html>
